@@ -4,83 +4,302 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enciclopédia Digital de Pragmática</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-page: #f7f5f0;
+      --bg-card: #ffffff;
+      --text-main: #1f2421;
+      --text-muted: #5a626a;
+      --accent: #7a1c1c;       /* Bordô editorial clássico */
+      --accent-hover: #521010;
+      --border-light: #e2ddd3;
+      --border-dark: #2c353d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.7;
-      color: #1a1a1a;
-      background-color: #faf9f6;
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem;
-    }
-    header {
-      border-bottom: 2px solid #2c3e50;
-      padding-bottom: 1rem;
-      margin-bottom: 2rem;
-    }
-    h1 {
-      font-size: 2rem;
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.2rem;
+      line-height: 1.75;
+      color: var(--text-main);
+      background-color: var(--bg-page);
       margin: 0;
-      color: #111;
+      padding: 0;
     }
-    .subtitulo {
-      font-family: system-ui, -apple-system, sans-serif;
-      font-size: 0.95rem;
-      color: #555;
-      margin-top: 0.3rem;
+
+    /* Faixa institucional superior */
+    .top-bar {
+      background-color: #1e252b;
+      color: #d8dee4;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.5rem;
+      text-align: center;
     }
-    h2 {
-      font-size: 1.3rem;
-      color: #2c3e50;
-      margin-top: 2rem;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.3rem;
+
+    .container {
+      max-width: 840px;
+      margin: 3rem auto;
+      background-color: var(--bg-card);
+      padding: 3.5rem 4rem;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
     }
-    ul {
-      padding-left: 1.2rem;
+
+    header {
+      text-align: center;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      position: relative;
     }
-    li {
+
+    header::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: var(--accent);
+      margin: 1.5rem auto -2.1rem;
+    }
+
+    .sigla {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
       margin-bottom: 0.5rem;
     }
-    a {
-      color: #1a5276;
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin: 0;
+      color: #111;
+      letter-spacing: -0.01em;
+    }
+
+    .subtitulo {
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+    }
+
+    /* Barra de busca funcional */
+    .search-box {
+      margin: 2rem 0 2.5rem;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      background-color: #fbfaf8;
+      color: var(--text-main);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--accent);
+      background-color: #fff;
+      box-shadow: 0 0 0 3px rgba(122, 28, 28, 0.08);
+    }
+
+    .intro {
+      font-size: 1.25rem;
+      color: #2b3035;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 0.5rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Grade de verbetes */
+    .verbetes-grid {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+    }
+
+    .verbete-card {
+      border: 1px solid var(--border-light);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.3rem;
+      border-radius: 3px;
+      background-color: #fcfbf9;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    }
+
+    .verbete-card:hover {
+      background-color: #ffffff;
+      transform: translateX(3px);
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .verbete-card a {
+      display: block;
       text-decoration: none;
     }
-    a:hover {
+
+    .verbete-titulo {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .verbete-card:hover .verbete-titulo {
+      color: var(--accent-hover);
       text-decoration: underline;
     }
+
+    .verbete-meta {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .badge {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      background-color: #eee9df;
+      color: #4a453d;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
     footer {
       margin-top: 4rem;
-      padding-top: 1rem;
-      border-top: 1px solid #ddd;
-      font-family: system-ui, -apple-system, sans-serif;
-      font-size: 0.85rem;
-      color: #666;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-light);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        margin: 0;
+        padding: 2rem 1.4rem;
+        border: none;
+      }
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Enciclopédia Digital de Pragmática</h1>
-    <div class="subtitulo">Obra de referência em pragmática filosófica, linguística e cognitiva</div>
-  </header>
 
-  <main>
-    <p>Bem-vindo à <strong>Enciclopédia Digital de Pragmática</strong>, um repositório acadêmico de acesso aberto dedicado aos conceitos fundamentais, modelos teóricos e autores da área.</p>
+  <div class="top-bar">
+    Acesso Aberto &bull; Referência Acadêmica em Ciências da Linguagem e Filosofia
+  </div>
 
-    <h2>Verbetes em Preparação</h2>
-    <ul>
-      <li><a href="#">Atos de Fala (Austin &amp; Searle)</a></li>
-      <li><a href="#">Explicatura e Subdeterminação Linguística</a></li>
-      <li><a href="#">Implicatura Conversacional (Grice)</a></li>
-      <li><a href="#">Pragmática Lexical (Carston &amp; Wilson)</a></li>
-      <li><a href="#">Teoria da Relevância (Sperber &amp; Wilson)</a></li>
-    </ul>
-  </main>
+  <div class="container">
+    <header>
+      <div class="sigla">EDP &bull; ISSN em preparação</div>
+      <h1>Enciclopédia Digital de Pragmática</h1>
+      <div class="subtitulo">Obra de referência em pragmática filosófica, linguística e cognitiva</div>
+    </header>
 
-  <footer>
-    <p>Enciclopédia Digital de Pragmática &bull;</p>
-  </footer>
+    <main>
+      <p class="intro">
+        Bem-vindo à <strong>Enciclopédia Digital de Pragmática</strong>, um repositório acadêmico de acesso aberto dedicado ao rigor conceitual, aos modelos teóricos e aos principais autores dos estudos pragmáticos.
+      </p>
+
+      <div class="search-box">
+        <input type="text" id="filtroVerbetes" placeholder="Filtrar verbetes por título, autor ou corrente teórica..." onkeyup="filtrar()">
+      </div>
+
+      <h2>Verbetes em Preparação</h2>
+      <ul class="verbetes-grid" id="listaVerbetes">
+        <li class="verbete-card">
+          <a href="#">
+            <span class="verbete-titulo">Atos de Fala <span class="badge">Em redação</span></span>
+            <span class="verbete-meta">Pragmática Filosófica &bull; J. L. Austin, John Searle</span>
+          </a>
+        </li>
+        <li class="verbete-card">
+          <a href="#">
+            <span class="verbete-titulo">Explicatura e Subdeterminação Linguística <span class="badge">Em redação</span></span>
+            <span class="verbete-meta">Pragmática Cognitiva &bull; Dan Sperber, Deirdre Wilson, Robyn Carston</span>
+          </a>
+        </li>
+        <li class="verbete-card">
+          <a href="#">
+            <span class="verbete-titulo">Implicatura Conversacional <span class="badge">Em redação</span></span>
+            <span class="verbete-meta">Pragmática Clássica &bull; H. P. Grice, Laurence Horn, Stephen Levinson</span>
+          </a>
+        </li>
+        <li class="verbete-card">
+          <a href="#">
+            <span class="verbete-titulo">Pragmática Lexical <span class="badge">Em redação</span></span>
+            <span class="verbete-meta">Semântica e Pragmática &bull; Robyn Carston, Deirdre Wilson</span>
+          </a>
+        </li>
+        <li class="verbete-card">
+          <a href="#">
+            <span class="verbete-titulo">Teoria da Relevância <span class="badge">Em redação</span></span>
+            <span class="verbete-meta">Pragmática Cognitiva &bull; Dan Sperber, Deirdre Wilson</span>
+          </a>
+        </li>
+      </ul>
+    </main>
+
+    <footer>
+      <span>Enciclopédia Digital de Pragmática</span>
+      <span>Conteúdo sob licença Creative Commons (CC BY 4.0)</span>
+    </footer>
+  </div>
+
+  <script>
+    function filtrar() {
+      const termo = document.getElementById('filtroVerbetes').value.toLowerCase();
+      const cards = document.querySelectorAll('.verbete-card');
+      cards.forEach(card => {
+        const texto = card.innerText.toLowerCase();
+        card.style.display = texto.includes(termo) ? 'block' : 'none';
+      });
+    }
+  </script>
+
 </body>
 </html>
