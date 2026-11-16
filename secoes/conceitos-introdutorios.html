@@ -61,7 +61,6 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
     }
 
-    /* Trilha de navegação (Breadcrumb) */
     .breadcrumb {
       font-family: 'Inter', system-ui, sans-serif;
       font-size: 0.8rem;
@@ -283,60 +282,68 @@
     </nav>
 
     <header>
-      <div class="eixo-label">Seção Temática &bull; Fundamentos</div>
+      <div class="eixo-label">Seção Temática &bull; Porta de Entrada</div>
       <h1>Conceitos Introdutórios</h1>
-      <div class="subtitulo">Noções basilares para o estudo da significação contextual e do uso linguístico</div>
+      <div class="subtitulo">Noções gerais e universais sobre linguagem em uso, significação e comunicação</div>
     </header>
 
     <main>
       <p class="intro-secao">
-        Esta seção reúne os conceitos estruturantes da Pragmática contemporânea, delimitando a fronteira entre o significado codificado no sistema linguístico e o sentido inferido pelos interlocutores em contextos concretos de comunicação.
+        Esta seção apresenta os conceitos elementares que definem o campo da Pragmática e o situam no interior dos estudos da linguagem. Os verbetes aqui reunidos oferecem definições panorâmicas e acessíveis sobre como os seres humanos produzem e interpretam sentidos em situações reais de interação.
       </p>
 
       <div class="search-box">
-        <input type="text" id="filtroSecao" placeholder="Filtrar conceitos desta seção..." onkeyup="filtrarSecao()">
+        <input type="text" id="filtroSecao" placeholder="Filtrar conceitos introdutórios..." onkeyup="filtrarSecao()">
       </div>
 
-      <h2>Verbetes da Seção</h2>
+      <h2>Verbetes Gerais</h2>
       <ul class="verbetes-lista">
 
         <li class="verbete-item">
+          <a href="../verbetes/pragmatica.html">
+            <span class="verbete-titulo">Pragmática (e sua distinção da Semântica) <span class="badge">Em redação</span></span>
+            <p class="verbete-resumo">Definição geral da Pragmática como o estudo da linguagem em uso, sua origem na tricotomia semiótica de Charles Morris e a clássica divisão de trabalho entre o significado convencional (Semântica) e o significado do falante em contexto (Pragmática).</p>
+            <span class="verbete-meta">Tópicos: Sintaxe, Semântica e Pragmática &bull; Significado da sentença vs. significado do enunciado</span>
+          </a>
+        </li>
+
+        <li class="verbete-item">
+          <a href="../verbetes/circuito-de-fala.html">
+            <span class="verbete-titulo">Circuito de Fala e Modelos de Comunicação <span class="badge">Em redação</span></span>
+            <p class="verbete-resumo">Do circuito da fala de Ferdinand de Saussure e das funções da linguagem de Roman Jakobson até a crítica pragmática ao modelo do código e a transição para os modelos inferenciais de comunicação.</p>
+            <span class="verbete-meta">Tópicos: Emissor, receptor e código &bull; Modelo do código vs. modelo inferencial</span>
+          </a>
+        </li>
+
+        <li class="verbete-item">
           <a href="../verbetes/contexto.html">
-            <span class="verbete-titulo">Contexto e Ambiente Cognitivo <span class="badge">Em redação</span></span>
-            <p class="verbete-resumo">A passagem da noção situacional e discursiva de contexto para a concepção cognitiva de conjunto de suposições manifestas ao indivíduo.</p>
-            <span class="verbete-meta">Referências-chave: Stalnaker, Sperber &amp; Wilson, Levinson</span>
+            <span class="verbete-titulo">Contexto <span class="badge">Em redação</span></span>
+            <p class="verbete-resumo">O papel do entorno físico, situacional, discursivo (cotexto) e do conhecimento compartilhado na determinação do sentido dos enunciados e na resolução de ambiguidades.</p>
+            <span class="verbete-meta">Tópicos: Cotexto &bull; Situação comunicativa &bull; Conhecimento de mundo</span>
           </a>
         </li>
 
         <li class="verbete-item">
-          <a href="../verbetes/deixis.html">
-            <span class="verbete-titulo">Dêixis e Indexicalidade <span class="badge">Em redação</span></span>
-            <p class="verbete-resumo">Expressões linguísticas cuja referência depende diretamente das coordenadas de pessoa, tempo, espaço e discurso do ato enunciativo.</p>
-            <span class="verbete-meta">Referências-chave: Bühler, Benveniste, Kaplan, Fillmore</span>
+          <a href="../verbetes/sentenca-enunciado-proposicao.html">
+            <span class="verbete-titulo">Sentença, Enunciado e Proposição <span class="badge">Em redação</span></span>
+            <p class="verbete-resumo">Distinção fundamental entre a entidade gramatical abstrata (sentença), sua realização concreta por um falante em um tempo e lugar específicos (enunciado) e o conteúdo avaliável em termos de verdade (proposição).</p>
+            <span class="verbete-meta">Tópicos: Tipo vs. ocorrência &bull; Condições de verdade</span>
           </a>
         </li>
 
         <li class="verbete-item">
-          <a href="../verbetes/implicatura.html">
-            <span class="verbete-titulo">Implicatura (Convencional e Conversacional) <span class="badge">Em redação</span></span>
-            <p class="verbete-resumo">Conteúdos comunicados intencionalmente pelo falante para além do que é explicitamente dito, governados pelo Princípio da Cooperação e máximas conversacionais.</p>
-            <span class="verbete-meta">Referências-chave: H. P. Grice, Horn, Levinson</span>
+          <a href="../verbetes/intencao-comunicativa.html">
+            <span class="verbete-titulo">Intenção Comunicativa e Inferência <span class="badge">Em redação</span></span>
+            <p class="verbete-resumo">Como os interlocutores vão além do sentido literal das palavras ao reconhecer as intenções uns dos outros por meio de raciocínios contextuais cotidianos.</p>
+            <span class="verbete-meta">Tópicos: Sentido literal vs. sentido pretendido &bull; Raciocínio pragmático</span>
           </a>
         </li>
 
         <li class="verbete-item">
-          <a href="../verbetes/pressuposicao.html">
-            <span class="verbete-titulo">Pressuposição Pragmática <span class="badge">Em redação</span></span>
-            <p class="verbete-resumo">Condições de fundo tomadas como mutuamente aceitas pelos participantes da interação para que um enunciado faça sentido.</p>
-            <span class="verbete-meta">Referências-chave: Strawson, Stalnaker, Karttunen</span>
-          </a>
-        </li>
-
-        <li class="verbete-item">
-          <a href="../verbetes/subdeterminacao.html">
-            <span class="verbete-titulo">Subdeterminação Linguística <span class="badge">Em redação</span></span>
-            <p class="verbete-resumo">A tese de que a forma lógica codificada pelas expressões linguísticas não determina completamente a proposição expressa pelo enunciado.</p>
-            <span class="verbete-meta">Referências-chave: Robyn Carston, François Recanati, Sperber &amp; Wilson</span>
+          <a href="../verbetes/referencia-e-deixis.html">
+            <span class="verbete-titulo">Referência e Dêixis <span class="badge">Em redação</span></span>
+            <p class="verbete-resumo">Como a linguagem aponta para o mundo: o ato de referir e o funcionamento de palavras como "eu", "aqui" e "agora", cujo sentido muda conforme quem fala, onde e quando.</p>
+            <span class="verbete-meta">Tópicos: Dêixis pessoal, espacial e temporal &bull; Expressões referenciais</span>
           </a>
         </li>
 
