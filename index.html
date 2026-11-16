@@ -42,7 +42,49 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       padding: 0.6rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .top-bar-spacer {
+      width: 72px;
+    }
+
+    .top-bar-text {
       text-align: center;
+      flex: 1;
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 0.35rem;
+      align-items: center;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #d8dee4;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .lang-btn:hover {
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+
+    .lang-btn.active {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
     }
 
     .container {
@@ -236,6 +278,9 @@
       .temas-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+      .top-bar-spacer {
+        display: none;
+      }
     }
 
     @media (max-width: 640px) {
@@ -259,70 +304,76 @@
 <body>
 
   <div class="top-bar">
-    Acesso Aberto &bull; Enciclopédia Digital de Pragmática (DigiPragma)
+    <div class="top-bar-spacer"></div>
+    <div class="top-bar-text" data-i18n="topbar">
+      Acesso Aberto &bull; Enciclopédia Digital de Pragmática (DigiPragma)
+    </div>
+    <div class="lang-switch" aria-label="Selecionar idioma">
+      <button class="lang-btn active" id="btn-pt" onclick="setIdioma('pt')">PT</button>
+      <button class="lang-btn" id="btn-en" onclick="setIdioma('en')">EN</button>
+    </div>
   </div>
 
   <div class="container">
     <header>
-      <div class="sigla">DigiPragma &bull; ISSN em preparação</div>
-      <h1>Enciclopédia Digital de Pragmática</h1>
-      <div class="subtitulo">Compêndio online de referência em estudos pragmáticos</div>
+      <div class="sigla" data-i18n="sigla">DigiPragma &bull; ISSN em preparação</div>
+      <h1 data-i18n="titulo">Enciclopédia Digital de Pragmática</h1>
+      <div class="subtitulo" data-i18n="subtitulo">Compêndio online de referência em estudos pragmáticos</div>
     </header>
 
     <main>
-      <p class="intro">
+      <p class="intro" data-i18n="intro">
         A <strong>Enciclopédia Digital de Pragmática (DigiPragma)</strong> é um repositório acadêmico de acesso aberto dedicado a mapear conceitos e teorias do campo de estudo da Pragmática, servindo como sítio de apoio à pesquisa e divulgação científica.
       </p>
 
-      <h2>Seções Temáticas</h2>
+      <h2 data-i18n="secoes_titulo">Seções Temáticas</h2>
       <div class="temas-grid">
 
-<a href="secoes/conceitos-introdutorios.html" class="tema-card">
-          <img src="https://www.pragmalingu.de/img/Pragmatics_language_layers_Scott.webp" alt="Pragmática Clássica e Griceana">
+        <a href="secoes/conceitos-introdutorios.html" class="tema-card">
+          <img src="https://www.pragmalingu.de/img/Pragmatics_language_layers_Scott.webp" alt="Conceitos Introdutórios">
           <div class="tema-overlay">
-            <span class="tema-eixo">Fundamentos</span>
-            <h3 class="tema-titulo">Conceitos Introdutórios</h3>
+            <span class="tema-eixo" data-i18n="eixo_intro">Fundamentos</span>
+            <h3 class="tema-titulo" data-i18n="tema_intro">Conceitos Introdutórios</h3>
           </div>
         </a>
 
         <a href="secoes/pragmatica-classica.html" class="tema-card">
           <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgaEYew4fvHaLPdoBr3CR2ibFTyYzrzUdIEEK0MVwrYfRXLt2Kjmvk0mzS3Kov-iPVr1-CF_4UX2yaRWrzPWhxRZUSKeCbqoV3XNYI__UgFZJ0T7YZv2OI0geyXirvh9dJbmY0LOq7kHKI/s1600/paul-grice-retouched.jpg" alt="Pragmática Clássica e Griceana">
           <div class="tema-overlay">
-            <span class="tema-eixo">Fundamentos</span>
-            <h3 class="tema-titulo">Pragmática Clássica &amp; Griceana</h3>
+            <span class="tema-eixo" data-i18n="eixo_grice">Fundamentos</span>
+            <h3 class="tema-titulo" data-i18n="tema_grice">Pragmática Clássica &amp; Griceana</h3>
           </div>
         </a>
         
         <a href="secoes/teoria-da-relevancia.html" class="tema-card">
           <img src="https://cdn.waterstones.com/bookjackets/large/9780/6311/9780631198789.jpg" alt="Teoria da Relevância">
           <div class="tema-overlay">
-            <span class="tema-eixo">Pragmática Cognitiva</span>
-            <h3 class="tema-titulo">Teoria da Relevância</h3>
+            <span class="tema-eixo" data-i18n="eixo_rt">Pragmática Cognitiva</span>
+            <h3 class="tema-titulo" data-i18n="tema_rt">Teoria da Relevância</h3>
           </div>
         </a>
 
         <a href="secoes/conciliacao-de-metas.html" class="tema-card">
           <img src="https://www.infoescola.com/wp-content/uploads/2018/08/img_5b6df0fb9b6f1.png" alt="Teoria de Conciliação de Metas">
           <div class="tema-overlay">
-            <span class="tema-eixo">Ação &amp; Interação</span>
-            <h3 class="tema-titulo">Teoria de Conciliação de Metas</h3>
+            <span class="tema-eixo" data-i18n="eixo_tcm">Ação &amp; Interação</span>
+            <h3 class="tema-titulo" data-i18n="tema_tcm">Teoria de Conciliação de Metas</h3>
           </div>
         </a>
-
 
         <a href="secoes/atos-de-fala.html" class="tema-card">
           <img src="https://jamesgmartin.center/wp-content/uploads/2017/01/Marketplace-of-Ideas.jpg" alt="Teoria dos Atos de Fala">
           <div class="tema-overlay">
-            <span class="tema-eixo">Filosofia da Linguagem</span>
-            <h3 class="tema-titulo">Atos de Fala</h3>
+            <span class="tema-eixo" data-i18n="eixo_atos">Filosofia da Linguagem</span>
+            <h3 class="tema-titulo" data-i18n="tema_atos">Atos de Fala</h3>
           </div>
         </a>
 
-        <a href="secoes/pragmatica-juridica.html" class="tema-card">
-          <img src="https://www.the-tls.com/wp-content/uploads/2019/11/Austin1.jpg" alt="Pragmática Jurídica">
+        <a href="secoes/autores.html" class="tema-card">
+          <img src="https://www.the-tls.com/wp-content/uploads/2019/11/Austin1.jpg" alt="Filósofos e Pesquisadores">
           <div class="tema-overlay">
-            <span class="tema-eixo">Autores</span>
-            <h3 class="tema-titulo">Filósofos &amp; Pesquisadores</h3>
+            <span class="tema-eixo" data-i18n="eixo_autores">Autores</span>
+            <h3 class="tema-titulo" data-i18n="tema_autores">Filósofos &amp; Pesquisadores</h3>
           </div>
         </a>
 
@@ -331,14 +382,91 @@
 
     <footer>
       <nav class="footer-nav">
-        <a href="sobre.html" class="footer-btn">Sobre</a>
-        <a href="indice.html" class="footer-btn">Índice de Verbetes</a>
+        <a href="sobre.html" class="footer-btn" data-i18n="btn_sobre">Sobre</a>
+        <a href="indice.html" class="footer-btn" data-i18n="btn_indice">Índice de Verbetes</a>
       </nav>
-      <div class="footer-info">
+      <div class="footer-info" data-i18n="footer_info">
         Enciclopédia Digital de Pragmática (DigiPragma) &bull; Conteúdo sob licença Creative Commons (CC BY 4.0)
       </div>
     </footer>
   </div>
+
+  <script>
+    const traducoes = {
+      pt: {
+        topbar: "Acesso Aberto &bull; Enciclopédia Digital de Pragmática (DigiPragma)",
+        sigla: "DigiPragma &bull; ISSN em preparação",
+        titulo: "Enciclopédia Digital de Pragmática",
+        subtitulo: "Compêndio online de referência em estudos pragmáticos",
+        intro: "A <strong>Enciclopédia Digital de Pragmática (DigiPragma)</strong> é um repositório acadêmico de acesso aberto dedicado a mapear conceitos e teorias do campo de estudo da Pragmática, servindo como sítio de apoio à pesquisa e divulgação científica.",
+        secoes_titulo: "Seções Temáticas",
+        eixo_intro: "Fundamentos",
+        tema_intro: "Conceitos Introdutórios",
+        eixo_grice: "Fundamentos",
+        tema_grice: "Pragmática Clássica &amp; Griceana",
+        eixo_rt: "Pragmática Cognitiva",
+        tema_rt: "Teoria da Relevância",
+        eixo_tcm: "Ação &amp; Interação",
+        tema_tcm: "Teoria de Conciliação de Metas",
+        eixo_atos: "Filosofia da Linguagem",
+        tema_atos: "Atos de Fala",
+        eixo_autores: "Autores",
+        tema_autores: "Filósofos &amp; Pesquisadores",
+        btn_sobre: "Sobre",
+        btn_indice: "Índice de Verbetes",
+        footer_info: "Enciclopédia Digital de Pragmática (DigiPragma) &bull; Conteúdo sob licença Creative Commons (CC BY 4.0)"
+      },
+      en: {
+        topbar: "Open Access &bull; Digital Encyclopedia of Pragmatics (DigiPragma)",
+        sigla: "DigiPragma &bull; ISSN forthcoming",
+        titulo: "Digital Encyclopedia of Pragmatics",
+        subtitulo: "Online reference compendium in pragmatic studies",
+        intro: "The <strong>Digital Encyclopedia of Pragmatics (DigiPragma)</strong> is an open-access academic repository dedicated to mapping concepts and theories within the field of Pragmatics, serving as a resource for research and scientific outreach.",
+        secoes_titulo: "Thematic Sections",
+        eixo_intro: "Foundations",
+        tema_intro: "Introductory Concepts",
+        eixo_grice: "Foundations",
+        tema_grice: "Classical &amp; Gricean Pragmatics",
+        eixo_rt: "Cognitive Pragmatics",
+        tema_rt: "Relevance Theory",
+        eixo_tcm: "Action &amp; Interaction",
+        tema_tcm: "Goal-Conciliation Theory",
+        eixo_atos: "Philosophy of Language",
+        tema_atos: "Speech Acts",
+        eixo_autores: "Authors",
+        tema_autores: "Philosophers &amp; Researchers",
+        btn_sobre: "About",
+        btn_indice: "Index of Entries",
+        footer_info: "Digital Encyclopedia of Pragmatics (DigiPragma) &bull; Content licensed under Creative Commons (CC BY 4.0)"
+      }
+    };
+
+    function setIdioma(lang) {
+      const dicionario = traducoes[lang];
+      if (!dicionario) return;
+
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+      document.title = lang === 'pt'
+        ? "Enciclopédia Digital de Pragmática (DigiPragma)"
+        : "Digital Encyclopedia of Pragmatics (DigiPragma)";
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const chave = el.getAttribute('data-i18n');
+        if (dicionario[chave]) {
+          el.innerHTML = dicionario[chave];
+        }
+      });
+
+      document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      localStorage.setItem('digipragma_lang', lang);
+    }
+
+    const idiomaSalvo = localStorage.getItem('digipragma_lang');
+    if (idiomaSalvo && idiomaSalvo !== 'pt') {
+      setIdioma(idiomaSalvo);
+    }
+  </script>
 
 </body>
 </html>
