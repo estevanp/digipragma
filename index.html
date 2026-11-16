@@ -41,15 +41,31 @@
       font-size: 0.78rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      padding: 0.6rem 1.5rem;
+      padding: 0.5rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
     }
 
-    .top-bar-spacer {
-      width: 72px;
+    .top-bar-logo-link {
+      display: inline-flex;
+      align-items: center;
+      background-color: #f7f5f0;
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+
+    .top-bar-logo-link:hover {
+      opacity: 0.9;
+    }
+
+    .top-bar-logo {
+      height: 24px;
+      width: auto;
+      display: block;
     }
 
     .top-bar-text {
@@ -111,13 +127,6 @@
       height: 3px;
       background-color: var(--accent);
       margin: 1.5rem auto -2.1rem;
-    }
-
-    .logo-discreto {
-      max-height: 54px;
-      width: auto;
-      display: block;
-      margin: 0 auto 0.9rem;
     }
 
     .sigla {
@@ -281,11 +290,28 @@
       text-align: center;
     }
 
+    .footer-logo-link {
+      display: inline-block;
+      margin-top: 0.4rem;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .footer-logo-link:hover {
+      opacity: 0.85;
+      transform: translateY(-2px);
+    }
+
+    .footer-logo {
+      max-height: 46px;
+      width: auto;
+      display: block;
+    }
+
     @media (max-width: 768px) {
       .temas-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .top-bar-spacer {
+      .top-bar-text {
         display: none;
       }
     }
@@ -311,7 +337,9 @@
 <body>
 
   <div class="top-bar">
-    <div class="top-bar-spacer"></div>
+    <a href="index.html" class="top-bar-logo-link" title="Página Inicial - DigiPragma">
+      <img src="imagens/logo-digipragma.png" alt="DigiPragma" class="top-bar-logo">
+    </a>
     <div class="top-bar-text" data-i18n="topbar">
       Acesso Aberto &bull; Enciclopédia Digital de Pragmática (DigiPragma)
     </div>
@@ -323,7 +351,6 @@
 
   <div class="container">
     <header>
-      <img src="imagens/logo-digipragma.png" alt="Logo DigiPragma" class="logo-discreto">
       <div class="sigla" data-i18n="sigla">DigiPragma &bull; ISSN em preparação</div>
       <h1 data-i18n="titulo">Enciclopédia Digital de Pragmática</h1>
       <div class="subtitulo" data-i18n="subtitulo">Compêndio online de referência em estudos pragmáticos</div>
@@ -396,6 +423,9 @@
       <div class="footer-info" data-i18n="footer_info">
         Enciclopédia Digital de Pragmática (DigiPragma) &bull; Conteúdo sob licença Creative Commons (CC BY 4.0)
       </div>
+      <a href="index.html" class="footer-logo-link" title="Voltar ao início">
+        <img src="imagens/logo-digipragma.png" alt="DigiPragma - Enciclopédia Digital de Pragmática" class="footer-logo">
+      </a>
     </footer>
   </div>
 
