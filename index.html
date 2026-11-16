@@ -113,21 +113,11 @@
       margin: 1.5rem auto -2.1rem;
     }
 
-    .logo-principal {
-      max-width: 460px;
-      width: 100%;
-      height: auto;
+    .logo-discreto {
+      max-height: 54px;
+      width: auto;
       display: block;
-      margin: 0 auto 0.6rem;
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
+      margin: 0 auto 0.9rem;
     }
 
     .sigla {
@@ -137,14 +127,23 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin: 0;
+      color: #111;
+      letter-spacing: -0.01em;
     }
 
     .subtitulo {
       font-style: italic;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: var(--text-muted);
-      margin-top: 0.4rem;
+      margin-top: 0.6rem;
     }
 
     .intro {
@@ -297,8 +296,8 @@
         padding: 2rem 1.4rem;
         border: none;
       }
-      .logo-principal {
-        max-width: 320px;
+      h1 {
+        font-size: 2rem;
       }
       .temas-grid {
         grid-template-columns: 1fr;
@@ -324,9 +323,9 @@
 
   <div class="container">
     <header>
+      <img src="imagens/logo-digipragma.png" alt="Logo DigiPragma" class="logo-discreto">
       <div class="sigla" data-i18n="sigla">DigiPragma &bull; ISSN em preparação</div>
-      <img src="imagens/logo-digipragma.png" alt="DigiPragma - Enciclopédia Digital de Pragmática" class="logo-principal">
-      <h1 class="sr-only" data-i18n="titulo">Enciclopédia Digital de Pragmática</h1>
+      <h1 data-i18n="titulo">Enciclopédia Digital de Pragmática</h1>
       <div class="subtitulo" data-i18n="subtitulo">Compêndio online de referência em estudos pragmáticos</div>
     </header>
 
